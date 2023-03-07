@@ -1,2 +1,2 @@
 # Go
-Some GoProjects
+Some easy GoProjects
