@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 	fmt.Println(fib(6))
+	//asdasdsda
 }
 
 func fib(n int) int {
