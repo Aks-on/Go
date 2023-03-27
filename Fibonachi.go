@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	fmt.Println(fib(6))
 	//asdasdsda
+	//asdasdasd
 }
 
 func fib(n int) int {
