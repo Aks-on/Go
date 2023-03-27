@@ -27,6 +27,7 @@ func printer(c chan int) {
 }
 
 func main() {
+	//Gorutins and Channels
 	c := make(chan int)
 	go pinger(c)
 	go ponger(c)

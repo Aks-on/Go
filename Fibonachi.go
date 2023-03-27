@@ -7,7 +7,6 @@ func main() {
 }
 
 func fib(n int) int {
-	//	f := 0
 	if n == 1 {
 		return 1
 	} else if n <= 0 {
