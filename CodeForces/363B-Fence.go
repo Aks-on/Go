@@ -26,7 +26,7 @@ func main() {
 				sum -= boards[i-k]
 			}
 			sum += boards[i]
-			if sum < min && (i-k+1) >= 0 {
+			if sum < min && sum >= k && (i-k+1) >= 0 {
 				min = sum
 				index = i
 			}
