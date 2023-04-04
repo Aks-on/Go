@@ -11,13 +11,13 @@ func main() {
 	var t int
 	fmt.Scan(&t)
 	reader := bufio.NewReader(os.Stdin)
-	angles := make([]int, t)
+	angles := make([]float64, t)
 	for i := 0; i < t; i++ {
 		fmt.Fscan(reader, &angles[i])
 	}
 
 	for i := 0; i < t; i++ {
-		if (angles[i]/180+2)%1 == 0 {
+		if int((360/(180-angles[i]))*100000)%100000 == 0 {
 			fmt.Println("YES")
 		} else {
 			fmt.Println("NO")
