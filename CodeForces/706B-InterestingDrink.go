@@ -5,26 +5,28 @@ import "fmt"
 func main() {
 	//https://codeforces.com/problemset/problem/706/B
 	//Input
-	var n, q int
+	var n, q, a int
 	fmt.Scan(&n)
-	shops := make([]int, n)
+	shops := make(map[int]int)
 	for i := 0; i < n; i++ {
-		fmt.Scan(&shops[i])
+		fmt.Scan(&a)
+		shops[a]++
 	}
 	fmt.Scan(&q)
 	money := make([]int, q)
+	res := make([]int, q)
 	for i := 0; i < q; i++ {
+		var x int
 		fmt.Scan(&money[i])
-	}
-	//Solution
-	res := n
-	for i := 0; i < q; i++ {
-		for j := 0; j < n; j++ {
-			if money[i] < shops[j] {
-				res--
+		for key, value := range shops {
+			if key <= money[i] {
+				x += value
 			}
 		}
-		fmt.Println(res)
-		res = n
+		res[i] = x
+	}
+	for i := 0; i < q; i++ {
+		fmt.Println(res[i])
+
 	}
 }
