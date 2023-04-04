@@ -17,14 +17,14 @@ func main() {
 		fmt.Scan(&money[i])
 	}
 	//Solution
-	var res int
+	res := n
 	for i := 0; i < q; i++ {
 		for j := 0; j < n; j++ {
-			if money[i] >= shops[j] {
-				res++
+			if money[i] < shops[j] {
+				res--
 			}
 		}
 		fmt.Println(res)
-		res = 0
+		res = n
 	}
 }
