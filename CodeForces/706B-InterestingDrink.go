@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 	//https://codeforces.com/problemset/problem/706/B
+	//Input
 	var n, q int
 	fmt.Scan(&n)
 	shops := make([]int, n)
@@ -15,5 +16,15 @@ func main() {
 	for i := 0; i < q; i++ {
 		fmt.Scan(&money[i])
 	}
-
+	//Solution
+	var res int
+	for i := 0; i < q; i++ {
+		for j := 0; j < n; j++ {
+			if money[i] >= shops[j] {
+				res++
+			}
+		}
+		fmt.Println(res)
+		res = 0
+	}
 }
