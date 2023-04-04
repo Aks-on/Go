@@ -1,17 +1,20 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 )
 
 func main() {
 	//https://codeforces.com/problemset/problem/706/B
 	//Input
 	var n, q, a int
-	fmt.Scan(&n)
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Fscan(reader, &n)
 	shops := make(map[int]int)
 	for i := 0; i < n; i++ {
-		fmt.Scan(&a)
+		fmt.Fscan(reader, &a)
 		shops[a]++
 	}
 
@@ -19,10 +22,10 @@ func main() {
 		shops[i] += shops[i-1]
 	}
 
-	fmt.Scan(&q)
+	fmt.Fscan(reader, &q)
 	money := make([]int, q)
 	for i := 0; i < q; i++ {
-		fmt.Scan(&money[i])
+		fmt.Fscan(reader, &money[i])
 		if money[i] > 100000 {
 			money[i] = 100000
 		}
