@@ -21,7 +21,7 @@ func main() {
 	} else {
 		var min, index, sum int
 		min = k * 100
-		for i := 0; i < (n - k + 1); i++ {
+		for i := 0; i < n; i++ {
 			if i-k >= 0 {
 				sum -= boards[i-k]
 			}
