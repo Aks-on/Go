@@ -16,17 +16,17 @@ func main() {
 		fmt.Fscan(reader, &boards[i])
 	}
 
-	summ := make([]int, n-k+1)
-	for i := 0; i <= (n - k); i++ {
-		for j := 0; j < k; j++ {
-			summ[i] += boards[j+i]
+	var min, index, sum int
+	min = k * 100
+	for i := 0; i < (n - k + 1); i++ {
+		if i-k >= 0 {
+			sum -= boards[i-k]
+		}
+		sum += boards[i]
+		if sum < min && (i-k+1) >= 0 {
+			min = sum
+			index = i
 		}
 	}
-	var indexMin int
-	for key, val := range summ {
-		if val < summ[indexMin] {
-			indexMin = key
-		}
-	}
-	fmt.Println(indexMin + 1)
+	fmt.Println(index - k + 2)
 }
