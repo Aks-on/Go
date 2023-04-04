@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	//https://codeforces.com/problemset/problem/706/B
@@ -12,21 +14,17 @@ func main() {
 		fmt.Scan(&a)
 		shops[a]++
 	}
+
+	for i := 0; i < 100001; i++ {
+		shops[i] += shops[i-1]
+	}
+
 	fmt.Scan(&q)
 	money := make([]int, q)
-	res := make([]int, q)
 	for i := 0; i < q; i++ {
-		var x int
 		fmt.Scan(&money[i])
-		for key, value := range shops {
-			if key <= money[i] {
-				x += value
-			}
-		}
-		res[i] = x
 	}
 	for i := 0; i < q; i++ {
-		fmt.Println(res[i])
-
+		fmt.Println(shops[money[i]])
 	}
 }
