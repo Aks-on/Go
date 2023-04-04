@@ -17,7 +17,7 @@ func main() {
 	}
 
 	cars += groups[4] + groups[3] + groups[2]/2 + (groups[2]%2*2+groups[1])/4
-	if (groups[2]%2+groups[1])%4 > 0 {
+	if (groups[2]%2*2+groups[1])%4 > 0 {
 		cars++
 	}
 	fmt.Println(cars)
