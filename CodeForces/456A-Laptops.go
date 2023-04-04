@@ -22,7 +22,11 @@ func main() {
 		for j := 1; i+j < n; j++ {
 			if (prises[i] < prises[i+j] && quality[i] > quality[i+j]) || (prises[i] > prises[i+j] && quality[i] < quality[i+j]) {
 				check = true
+				break
 			}
+		}
+		if check {
+			break
 		}
 	}
 	if check {
