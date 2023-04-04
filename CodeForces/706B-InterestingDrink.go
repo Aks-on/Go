@@ -23,6 +23,9 @@ func main() {
 	money := make([]int, q)
 	for i := 0; i < q; i++ {
 		fmt.Scan(&money[i])
+		if money[i] > 100000 {
+			money[i] = 100000
+		}
 	}
 	for i := 0; i < q; i++ {
 		fmt.Println(shops[money[i]])
