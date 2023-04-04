@@ -16,10 +16,10 @@ func main() {
 		fmt.Fscan(reader, &boards[i])
 	}
 
-	summ := make([]int, n-k)
-	for i := 0; i < (n - k); i++ {
+	summ := make([]int, n-k+1)
+	for i := 0; i <= (n - k); i++ {
 		for j := 0; j < k; j++ {
-			summ[i] += boards[i]
+			summ[i] += boards[j+i]
 		}
 	}
 	var indexMin int
@@ -28,5 +28,5 @@ func main() {
 			indexMin = key
 		}
 	}
-	fmt.Println(summ[indexMin])
+	fmt.Println(indexMin + 1)
 }
